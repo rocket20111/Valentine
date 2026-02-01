@@ -211,19 +211,26 @@
 
     /* ===== YES BUTTON LOGIC ===== */
     yesButton.addEventListener("click", () => {
-      yesClicks++;
+  yesClicks++;
 
-      if (yesClicks === 1) {
-        question.textContent = "Are you sure? 🥺";
-      } else {
-        question.style.display = "none";
-        yesButton.style.display = "none";
-        noButton.style.display = "none";
-        final.classList.remove("hidden");
-        music.play();
-        startHearts();
-      }
-    });
+  // FIRST YES: start music + confirmation
+  if (yesClicks === 1) {
+    question.textContent = "Are you sure? 🥺";
+
+    music.currentTime = 0;   // start from beginning
+    music.play();            // music starts here 🎶
+  }
+
+  // SECOND YES: final reveal
+  else {
+    question.style.display = "none";
+    yesButton.style.display = "none";
+    noButton.style.display = "none";
+    final.classList.remove("hidden");
+
+    startHearts();
+  }
+});
 
     /* ===== FLOATING HEARTS ===== */
     function startHearts() {
@@ -267,4 +274,5 @@
   </script>
 
 </body>
+
 </html>
