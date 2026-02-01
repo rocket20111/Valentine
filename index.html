@@ -211,24 +211,19 @@
     noButton.addEventListener("touchstart", moveButton);
 
     /* ===== YES BUTTON LOGIC ===== */
-    yesButton.addEventListener("click", () => {
+  yesButton.addEventListener("click", () => {
   yesClicks++;
+  volumeNote.style.display = "none";
 
-  // FIRST YES: start music + confirmation
   if (yesClicks === 1) {
     question.textContent = "Are you sure? 🥺";
-
-    music.currentTime = 0;   // start from beginning
-    music.play();            // music starts here 🎶
-  }
-
-  // SECOND YES: final reveal
-  else {
+    music.currentTime = 0;
+    music.play();
+  } else {
     question.style.display = "none";
     yesButton.style.display = "none";
     noButton.style.display = "none";
     final.classList.remove("hidden");
-
     startHearts();
   }
 });
@@ -278,4 +273,5 @@
 
 
 </html>
+
 
