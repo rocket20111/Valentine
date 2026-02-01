@@ -146,13 +146,15 @@
       }
 
       #volume-note {
-      font-size: 14px;
-      color: #666;
-      margin-top: -10px;
-      margin-bottom: 20px;
-      font-style: italic;
+        display: block;
+        position: relative;
+        z-index: 3;
+        font-size: 14px;
+        color: #555;
+        margin-top: -10px;
+        margin-bottom: 40px;
+        font-style: italic;
       }
-    
     }
   </style>
 </head>
@@ -161,7 +163,7 @@
 
   <div class="container">
     <h1 id="question">Will you be my Valentine? 💕</h1>
-    <div id="volume-note">(please make sure your volume is on 🔊)</div>
+    <p id="volume-note">🔊 Please make sure your volume is on</p>
 
     <button id="yes">Yes</button>
     <button id="no">No</button>
@@ -283,6 +285,7 @@ const kissComplete = document.getElementById("kiss-complete");
 
 
 </html>
+
 
 
 
